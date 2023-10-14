@@ -1,0 +1,48 @@
+Admin Endpoints:
+1]Add new grocery items:
+o	Method: POST
+o	URL: /api/admin/grocery-items
+o	Request Body: JSON object with item details (name, price, quantity, etc.)
+{
+ “name”:”xyz”,
+“Price”: 100,
+“Quantity”:100
+}
+2] View existing grocery items:
+o	Method: GET
+o	URL: /api/admin/grocery-items
+o	Response: JSON array of existing grocery items
+3] Remove grocery items:
+o	Method: DELETE
+o	URL: /api/admin/grocery-items/{item_id}
+o	Path Parameter: item_id for the item to be removed
+4] Update grocery item details:
+o	Method: PUT
+o	URL: /api/admin/grocery-items/{item_id}
+o	Path Parameter: item_id for the item to be updated
+o	Request Body: JSON object with updated item details
+{“name”:”ABC”
+“price”:100,
+“Quantity”:100
+}
+e. Manage inventory levels:
+o	Method: POST
+o	URL: /api/admin/grocery-items/{item_id}/manage-inventory
+o	Path Parameter: item_id for the item to manage inventory
+o	Request Body: JSON object with inventory change details (e.g., add, remove)
+{
+“Name”:”pqr”,
+“Price”:200,
+“quantity”:100
+}
+
+User Endpoints:
+1]. View available grocery items:
+o	Method: GET
+o	URL: /api/user/grocery-items
+o	Response: JSON array of available grocery items
+2]. Book grocery items in an order:
+o	Method: POST
+o	URL: /api/user/orders
+o	Request Body: JSON array with item IDs to book
+
